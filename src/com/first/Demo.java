@@ -7,6 +7,7 @@ public class Demo {
         // List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7, 8);
         Map<String, String> map = Map.of("1","12","2","14","3","15","4","20","5","40");
          int search = 18;
+         int a = 6;
          int nearestSearch = -1;
          int numberToOpen = 0;
          for (Map.Entry<String, String> entry : map.entrySet()) {
