@@ -8,6 +8,7 @@ public class Demo {
         Map<String, String> map = Map.of("1","12","2","14","3","15","4","20","5","40");
          int search = 18;
          int a = 6;
+         String channel = "";
          int nearestSearch = -1;
          int numberToOpen = 0;
          for (Map.Entry<String, String> entry : map.entrySet()) {
