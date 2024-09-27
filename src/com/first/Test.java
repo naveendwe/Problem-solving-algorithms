@@ -45,12 +45,12 @@ public class Test {
 	 }
 	 public static void first() {
 		 int value = 4;
-		var day =  switch (value) {
-		 case 1 -> 2;
-		 case 2 -> 5;
-		 default -> 4;
-		 
-		};
+//		var day =  switch (value) {
+//		 case 1 -> 2;
+//		 case 2 -> 5;
+//		 default -> 4;
+//
+//		};
 	 }
 	 static void repeat() {
 		 String str = "java";
