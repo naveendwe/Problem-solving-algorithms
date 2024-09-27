@@ -20,15 +20,6 @@ public class Reverse {
 	public static void show() {
 		String value = null;
 	//	System.out.println(value.toUpperCase());
-		
-		String str = """
-				this is first 
-				program which is going 
-				to held on 15 august 2024.
-				so everybody be ready to celebrate 
-				this function.
-				""";
-		System.out.println(str);
 	
 	}
 	static void test() {
