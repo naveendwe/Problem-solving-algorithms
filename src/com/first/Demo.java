@@ -7,8 +7,6 @@ public class Demo {
         // List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7, 8);
         Map<String, String> map = Map.of("1","12","2","14","3","15","4","20","5","40");
          int search = 18;
-         int a = 6;
-         String channel = "";
          int nearestSearch = -1;
          int numberToOpen = 0;
          for (Map.Entry<String, String> entry : map.entrySet()) {
@@ -179,5 +177,17 @@ public class Demo {
         int totalDays = daysBetweenYears + daysBetweenMonths + daysBetweenDays;
         System.out.println("Days between " + day1 + "/" + month1 + "/" + year1 + " and " + day2 + "/" + month2 + "/" + year2 + ": " + totalDays + " days");
     }
+    static  void findNearestNumber(){
+        int[] numbers = {1,2,3,4,5,6,7,8,9};
+        int search = 5;
+        int nearestNumber = 0;
+        for(int i = 0; i < numbers.length; i++){
+            if(Math.abs(numbers[i] - search) < Math.abs(nearestNumber - search)){
+                nearestNumber = numbers[i];
+            }
+        }
+        System.out.println("Final nearest number is : "+nearestNumber);
+    }
+
 
 }
