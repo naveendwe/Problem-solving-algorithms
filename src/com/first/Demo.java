@@ -1,9 +1,18 @@
 package com.first;
 
-import java.util.Map;
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Demo {
+    static int a = 0,b=1,c=0;
     public static void main(String[] args) {
+
+        isAnagram("car", "rac");
         // List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7, 8);
         Map<String, String> map = Map.of("1","12","2","14","3","15","4","20","5","40");
          int search = 18;
@@ -189,5 +198,95 @@ public class Demo {
         System.out.println("Final nearest number is : "+nearestNumber);
     }
 
+    public static void show(){
+        int[] arr = {1,2,3,4,5,6,7,9};
+        HashSet<Integer> sorted = new HashSet<Integer>();
+        int max = 0;
+        for(int i : arr){
+            max = i;
+            sorted.add(i);
+        }
+        for(int i = 0;i<=max;i++){
+            if(!sorted.contains(i)){
+                System.out.println("mising number is " + i);
+            }
+        }
+    }
+    public static void display(){
+        String s = "listen";
+        String s1 = "silent1";
+        String str =  Stream.of(s.split("")).map(String::toUpperCase).sorted().collect(Collectors.joining());
+        String str1 =  Stream.of(s1.split("")).map(String::toUpperCase).sorted().collect(Collectors.joining());
+        if(str.equalsIgnoreCase(str1)){
+            System.out.println("The strings are anagrams.");
+        }
+        else{
+            System.out.println("The strings are not anagrams.");
+        }
+    }
 
+    public static void countDigitOfnumber(int number){
+        First first = (a,b) -> a+b;
+        System.out.println(first.add(3,4));
+        Predicate<Integer> predicate = (a) -> a>5;
+        predicate.test(4);
+        System.out.println("hello java");
+    }
+    interface First{
+        int add(int a , int b);
+    }
+    public static void examTree(){
+         int a = 11;
+         for(int i = 2;i<a;i++){
+             if(a%i==0) {
+                 System.out.println("Number is prime");
+                 return;
+             }
+         }
+    }
+
+    public static boolean isValid(String s) {
+        Stack<Character> stack = new Stack<Character>();
+         for(char c : s.toCharArray()){
+             if(c == '{' || c== '[' || c=='('){
+                 stack.push(c);
+             }else if( c =='}' || c==']' || c == ')'){
+                 if (stack.isEmpty() || !isMatchingPair(stack.pop(), c)){
+                     return false;
+                 }
+             }
+
+         }
+         return stack.isEmpty();
+    }
+    public static boolean isMatchingPair(char c1, char c2) {
+        return (c1 =='[' && c2==']')|| (c1=='{' && c2=='}')||(c1=='(' && c2==')');
+    }
+    public static void mergeTwoSortedList(List<String> l1, List<String> l2){
+       List<String> list =  Stream.concat(l1.stream(), l2.stream()).sorted().collect(Collectors.toList());
+
+    }
+    public int maxProfit(int[] prices){
+        if(prices == null || prices.length<2){
+            return 0;
+        }
+        int minPrice = Integer.MIN_VALUE;
+        int maxProfit = 0;
+        for(int price : prices){
+            //updatat the minimum price
+            if(price < minPrice){
+                minPrice = price;
+            }
+            else if(price - minPrice > maxProfit){
+                 maxProfit = price - minPrice;
+            }
+        }return maxProfit;
+    }
+    public static boolean isAnagram(String s, String t) {
+         char[] s1 = s.toCharArray();
+         char[] s2 = t.toCharArray();
+         Arrays.sort(s1);
+         Arrays.sort(s2);
+         return Arrays.equals(s1, s2);
+    }
 }
