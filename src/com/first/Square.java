@@ -6,11 +6,12 @@ import java.util.stream.Collectors;
 public class Square {
 
 	public static void main(String[] args) {
-	     List<Integer> list = List.of(1,2,2,3,4,5,5,6,7);
-	     Set<Integer> set = new HashSet<>();
-	     List<Integer> list2 =  list.stream().filter(i -> !set.add(i)).collect(Collectors.toList());
-	     System.out.println(list2);
-		findFabonacci();
+//	     List<Integer> list = List.of(1,2,2,3,4,5,5,6,7);
+//	     Set<Integer> set = new HashSet<>();
+//	     List<Integer> list2 =  list.stream().filter(i -> !set.add(i)).collect(Collectors.toList());
+//	     System.out.println(list2);
+		char[] ch  = {'h','e','l','l','o'};
+		reverseString(ch);
 	}
 	public void findCommonElementsbetweenTwoArrays() {
 		int[] arr1 = {1, 2, 3, 4, 5};
@@ -48,4 +49,33 @@ public class Square {
         }
 		System.out.println("Fibonacci Series: " + Arrays.toString(fibonacci));
 	 }
+	 public static void findFactorial(){
+		 int num = 5;
+         int factorial = 1;
+         for (int i = 1; i <= num; i++) {
+             factorial *= i;
+         }
+         System.out.println("Factorial of " + num + " is: " + factorial);
+	 }
+	public static void reverseString(char[] s) {
+		int left = 0;
+		int right = s.length - 1;
+		while (left < right) {
+			char temp = s[left];
+            s[left] = s[right];
+            s[right] = temp;
+            left++;
+            right--;
+		}
+		/*Stack<Character> stack = new Stack<>();
+		char[] result = new char[s.length];
+		int index = s.length-1;
+		for(char c : s){
+			result[index] = c;
+			index--;
+		}
+		for(int i = 0; i < result.length; i++){
+			System.out.print(result[i]+" ");
+		}*/
+	}
 }
