@@ -3,6 +3,7 @@ package com.first;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class GraphTest {
 
@@ -76,6 +77,43 @@ public class GraphTest {
                 vis[curr] = false;
             }
         }
+    }
+
+    public static void topSortUtil(ArrayList<Edge> graph[], int curr, boolean vis[], Stack<Integer> stack) {
+            vis[curr] = true;
+            for(int i = 0;i<graph[curr].size();i++){
+                Edge e = graph[curr].get(i);
+                if(!vis[e.dest]){
+                    topSortUtil(graph, e.dest, vis, stack);
+                }
+            }
+            stack.push(curr);
+    }
+    public static void topSort(ArrayList<Edge> graph[], int V){
+        boolean[] vis = new boolean[V];
+        Stack<Integer> stack = new Stack<>();
+        for(int i = 0;i<V; i++) {
+            if(!vis[i]) {
+                topSortUtil(graph, i, vis, stack);
+            }
+        }
+        while (!stack.isEmpty()){
+            System.out.println(stack.pop()+" ");
+        }
+    }
+    public static boolean isCycleUndirected(ArrayList<Edge> graph[], boolean vis[], int curr, int par){
+        vis[curr] = true;
+        for (int i = 0;i<graph[curr].size();i++){
+            Edge e = graph[curr].get(i);
+            if (vis[e.dest] && e.dest != par){
+                return true;
+            }else if(!vis[e.dest]){
+                if(isCycleUndirected(graph, vis, e.dest, curr)){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public static void main(String[] args) {
