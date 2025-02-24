@@ -52,7 +52,7 @@ public class TreeExample {
          if(node == null){
              return;
          }
-         postOrder(node.left);
+         postOrder(node.left); // these are important tree order traversal in this algorithms with java algorithms
          postOrder(node.right);
          System.out.print(node.data + " -> ");
     }
