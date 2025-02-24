@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 import javax.crypto.Mac;
 
 public class Test {
-
+    int a = 0;
 	static int result = 5;
 	public static void main(String[] args) {
 		int[] num = {2,7,11,15};
@@ -130,4 +130,19 @@ public class Test {
 				System.out.print(i+" ");
 			}
 		}
+		public static class Pair implements Comparable<Pair>{
+		    int node;
+			int dist;
+			public Pair(int node, int dist) {
+				super();
+                this.node = node;
+                this.dist = dist;
+            }
+
+			@Override
+			public int compareTo(Pair o) {
+				return this.dist - o.dist;
+			}
+		}
+
 	}
