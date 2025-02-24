@@ -198,8 +198,23 @@ public class Demo {
         System.out.println("Final nearest number is : "+nearestNumber);
     }
 
+    public void nearestNumber(){
+        List<Integer> list = Arrays.asList(1,5,8,4,6,7,9);
+        int near = 0;
+        int target = 4;
+        for(int num : list){
+            if(num < target){
+                if(num > near){
+                    near = num;
+                }
+            }
+        }
+    }
+
     public static void show(){
         int[] arr = {1,2,3,4,5,6,7,9};
+        OptionalInt min = Arrays.stream(arr).min();
+        System.out.println("Minimum number is: " + min);
         HashSet<Integer> sorted = new HashSet<Integer>();
         int max = 0;
         for(int i : arr){
