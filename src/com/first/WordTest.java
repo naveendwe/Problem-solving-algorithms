@@ -4,13 +4,18 @@ import org.w3c.dom.Node;
 
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class WordTest {
     public static void main(String[] args) {
-        add();
+       // System.out.println(isSubsequence("abc","asgbdtc"));
+        System.out.println(person());
+
     }
     public static void findSecondLastCharacterOfEachWord(){
         String sentence = "Hello World naveen";
@@ -188,7 +193,7 @@ public class WordTest {
     public static void sumOfEachIntValue(int value){
         int sum = 0;
         while(value!=0){
-            sum += value%10;
+            sum += value % 10;
             value = value / 10;
 
         }
@@ -242,7 +247,6 @@ public class WordTest {
             for(char c : ch){
                 if(c == '_'){
                     i++;
-                    continue;
                 } else{
                     if(i > 0) {
                         sb.append(Character.toUpperCase(c));
@@ -285,4 +289,91 @@ public class WordTest {
         String b = "20";
         System.out.println(a+b+"hello");
     }
+    public void test(){
+        {
+            {
+                int a = 10;
+                System.out.println(a);
+            }
+        }
+    }
+
+    public void testValue(){
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4);
+        boolean value = numbers.stream().anyMatch(n -> n%2==0);
+    }
+    public static void camelCaseToSnakeCase(){
+        String str = "ThisIsAnExample forJava";
+        String[] words = str.split(" ");
+        StringBuilder sb = new StringBuilder();
+        for(String word : words){
+            sb.append(Character.toLowerCase(word.charAt(0)));
+            for(int i = 1; i < word.length(); i++){
+                if(Character.isUpperCase(word.charAt(i))){
+                    sb.append("_");
+                    sb.append(Character.toLowerCase(word.charAt(i)));
+                } else{
+                    sb.append(word.charAt(i));
+                }
+            }
+        }
+        System.out.println("Snake case : "+sb.toString());
+    }
+
+    public static boolean isSubsequence(String s, String t) {
+        int m = s.length();
+        int n = t.length();
+        int[][] dp = new int[m+1][n+1];
+        for(int i = 0; i <= m; i++){
+            for(int j = 0; j <= n; j++){
+                if(i == 0 || j == 0){
+                    dp[i][j] = 0;
+                } else if(s.charAt(i-1) == t.charAt(j-1)){
+                    dp[i][j] = dp[i-1][j-1] + 1;
+                } else{
+                    dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+                }
+            }
+        }
+        return dp[m][n] == m;
+    }
+    public static void moveZeroes(int[] nums) {
+         if(nums.length==1)
+             return;
+         for(int j = 0;j<nums.length;j++) {
+             for (int i = 0; i < nums.length - 1; i++) {
+                 if (nums[i] == 0) {
+                     if (nums[i + 1] != 0) {
+                         int temp = nums[i];
+                         nums[i] = nums[i + 1];
+                         nums[i + 1] = temp;
+                     }
+
+                 }
+             }
+         }
+         for(int i = 0; i < nums.length; i++) {
+             System.out.print(nums[i] + " ");
+         }
+    }
+
+    public static int person(){
+        int result = 0;
+        String s =null; // manage nullpoionterException without if-else block statement;
+        String v = Optional.ofNullable(s).map(String::toUpperCase).orElse("Records not found");
+        try {
+            result = 10 / 0;
+            return 1;
+        }catch (ArithmeticException e){
+            return 2;
+        }
+        finally {
+            System.out.println("Finally block executed"); // this should be executed at any how
+            return 3;
+        }
+
+
+    }
+
+
 }
