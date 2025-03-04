@@ -28,7 +28,6 @@ public class TreeExample {
 
             return root;
         }
-
     }
     // preorder traversal for DFS algorithm
     public static  void preOrder(Node node){
