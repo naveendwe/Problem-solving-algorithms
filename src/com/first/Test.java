@@ -139,6 +139,7 @@ public class Test {
                 this.dist = dist;
             }
 
+
 			@Override
 			public int compareTo(Pair o) {
 				return this.dist - o.dist;
