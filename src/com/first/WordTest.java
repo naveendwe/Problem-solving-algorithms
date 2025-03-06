@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 public class WordTest {
     public static void main(String[] args) {
        // System.out.println(isSubsequence("abc","asgbdtc"));
-        System.out.println(person());
+       code();
 
     }
     public static void findSecondLastCharacterOfEachWord(){
@@ -371,9 +371,15 @@ public class WordTest {
             System.out.println("Finally block executed"); // this should be executed at any how
             return 3;
         }
-
+    }
+    public static void code(){
+//        List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David");
+//        names.parallelStream().sequential().filter(a -> a.startsWith("A")).collect(Collectors.toList());
+//        names.stream().map(String::length).collect(Collectors.toList());
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        numbers.stream().forEach(i -> System.out.println(i +" "+Thread.currentThread().getName()));
+        System.out.println("nn");
+        numbers.parallelStream().forEach(i -> System.out.println(i +" "+Thread.currentThread().getName()));
 
     }
-
-
 }
