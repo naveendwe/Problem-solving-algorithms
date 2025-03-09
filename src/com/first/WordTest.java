@@ -377,9 +377,21 @@ public class WordTest {
 //        names.parallelStream().sequential().filter(a -> a.startsWith("A")).collect(Collectors.toList());
 //        names.stream().map(String::length).collect(Collectors.toList());
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        String str = "naveen";
+        char ch = 'n';
+        str.chars().filter(i -> i == ch).count();
+        Set<Integer> set = new HashSet<Integer>();
         numbers.stream().forEach(i -> System.out.println(i +" "+Thread.currentThread().getName()));
+        numbers.stream().filter(i -> !set.add(i)).collect(Collectors.toList());
         System.out.println("nn");
         numbers.parallelStream().forEach(i -> System.out.println(i +" "+Thread.currentThread().getName()));
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("run...");
+            }
+        };
+        new Thread(runnable).start();
 
     }
 }

@@ -1,5 +1,7 @@
 package com.first;
 
+import java.io.File;
+
 public class StringTest {
     int n;
     static int a = 5, fact = 1;
@@ -30,5 +32,7 @@ public class StringTest {
 
     }
 
+    public static void file(){
 
+    }
 }
