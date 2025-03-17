@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 public class WordTest {
     public static void main(String[] args) {
        // System.out.println(isSubsequence("abc","asgbdtc"));
-       code();
+        int  a = show();
 
     }
     public static void findSecondLastCharacterOfEachWord(){
@@ -271,6 +271,7 @@ public class WordTest {
     public static void isAnagram(){
         String str1 = "listen";
         String str2 = "silent";
+        Stream.of(str1.split("")).map(String::toUpperCase).sorted().collect(Collectors.toList());
         boolean isAnagram = true;
         if(str1.length()!= str2.length()){
             isAnagram = false;
@@ -393,5 +394,15 @@ public class WordTest {
         };
         new Thread(runnable).start();
 
+    }
+    public static int show(){
+        int a = 10;
+        try{
+            a =  a /10;
+            System.exit(1);
+            return a;
+        }finally {
+            System.out.println("completed");
+        }
     }
 }
