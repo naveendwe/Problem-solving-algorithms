@@ -1,5 +1,7 @@
 package com.first;
 
+import java.applet.Applet;
+import java.awt.*;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -12,7 +14,7 @@ import java.util.stream.Stream;
 
 import javax.crypto.Mac;
 
-public class Test {
+public class Test  {
     int a = 0;
 	static int result = 5;
 	public static void main(String[] args) {
@@ -101,8 +103,8 @@ public class Test {
 		}
 		static void armstrong() {
 			String str = "listen", str1 = "silent";
-			str = Stream.of(str.split("")).map(st -> st.toUpperCase()).sorted(Comparator.naturalOrder()).collect(Collectors.joining());
-			str1 = Stream.of(str1.split("")).map(st1 -> st1.toUpperCase()).sorted(Comparator.naturalOrder()).collect(Collectors.joining());
+			str = Stream.of(str.split("")).map(String::toUpperCase).sorted(Comparator.naturalOrder()).collect(Collectors.joining());
+			str1 = Stream.of(str1.split("")).map(String::toUpperCase).sorted(Comparator.naturalOrder()).collect(Collectors.joining());
 			if(str.equals(str1))
 				System.out.println("armstrong no");
 			else
