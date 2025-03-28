@@ -29,8 +29,6 @@ public class GraphExam {
 
            graph[3].add(new Edge(3,1,1));
            graph[3].add(new Edge(3,2,1));
-
-
        }
        public static void bfs(ArrayList<Edge> graph[], int V){
            Queue<Integer> queue = new LinkedList<Integer>();
