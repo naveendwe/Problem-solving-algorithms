@@ -14,7 +14,9 @@ import java.util.stream.Stream;
 public class WordTest {
     public static void main(String[] args) {
        // System.out.println(isSubsequence("abc","asgbdtc"));
-        int  a = show();
+        //int  a = show();
+        int value = titleToNumber("ABC");
+        System.out.println("value : "+value);
 
     }
     public static void findSecondLastCharacterOfEachWord(){
@@ -242,28 +244,12 @@ public class WordTest {
         String str = "helloJavaThisIsAExample";
         char[] ch = str.toCharArray();
         StringBuilder sb = new StringBuilder();
-        if(str.contains("_")){
-            int i = 0;
-            for(char c : ch){
-                if(c == '_'){
-                    i++;
-                } else{
-                    if(i > 0) {
-                        sb.append(Character.toUpperCase(c));
-                        i = 0;
-                    }else {
-                        sb.append(c);
-                    }
-                }
-            }
-        }else{
-            for(char c : ch){
-                if(Character.isUpperCase(c)){
-                    sb.append("_");
-                    sb.append(Character.toLowerCase(c));
-                } else{
-                    sb.append(Character.toLowerCase(c));
-                }
+        for (char c : ch) {
+            if (Character.isUpperCase(c)) {
+                sb.append("_");
+                sb.append(Character.toLowerCase(c));
+            } else {
+                sb.append(Character.toLowerCase(c));
             }
         }
         System.out.println("In java : "+ sb);
@@ -404,5 +390,18 @@ public class WordTest {
         }finally {
             System.out.println("completed");
         }
+    }
+
+    public static int titleToNumber(String columnTitle) {
+        int result = 0;
+
+        for (char ch : columnTitle.toCharArray()) {
+            int value = ch - 'A' + 1; // Convert 'A' -> 1, 'B' -> 2, ..., 'Z' -> 26
+            result = result * 26 + value; // Multiply by 26 and add the current letter value
+        }
+        return result;
+    }
+    static int compareVersion(String version1, String version2, int a, int b) {
+       return 0;
     }
 }

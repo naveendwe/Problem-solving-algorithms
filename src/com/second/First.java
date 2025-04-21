@@ -1,28 +1,23 @@
 package com.second;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 
 public class First {
     First() {
         System.out.println("First-Constructor");
     }
-
     void show() {
         System.out.println("show-first");
     }
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidBookException {
         //First f = new A();
-        A a = new A();
-        StringBuilder sb = new StringBuilder();
-        sb.insert(0,"first");
+       // f.area();  // what will be displayed
+        System.out.println("hello".length());
+        if(5 < 6){
+            throw new InvalidBookException("Invalid Book");
+        }
 
     }
 }
-
 class A extends First {
     @Override
     void show() {
@@ -30,5 +25,10 @@ class A extends First {
     }
     void area() {
         System.out.println("Area");
+    }
+}
+class InvalidBookException extends Exception{
+    public InvalidBookException(String message){
+        super(message);
     }
 }
