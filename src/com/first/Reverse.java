@@ -1,9 +1,6 @@
 package com.first;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -39,7 +36,7 @@ public class Reverse {
 	}
 	static void secondLargest() {
 		  String str = "Java Concept Of The Day";
-           String reverseString = Arrays.stream(str.split(" ")).map(word -> new StringBuffer(word).reverse())
+		  String reverseString = Arrays.stream(str.split(" ")).map(word -> new StringBuffer(word).reverse())
         		                                 .collect(Collectors.joining(" "));
            System.out.println(reverseString);
 	}
@@ -71,9 +68,21 @@ public class Reverse {
 			if(arr[i] != arr[i+1]) {
 				System.out.println("Second largest value is : "+arr[i+1]);
 				break;
-			}else {
-				
 			}
+		}
+	}
+	void first(int[] arr){
+		int leng = arr.length;
+		for(int i = 0; i<leng-1;i++){
+			int min_idx = i;
+			for(int j = i+1;j<leng;j++){
+				if(arr[j] < arr[min_idx]){
+					min_idx = j;
+				}
+			}
+			int temp = arr[i];
+			arr[i] = arr[min_idx];
+			arr[min_idx] = temp;
 		}
 	}
 }

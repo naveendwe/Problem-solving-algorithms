@@ -218,7 +218,7 @@ public class Demo {
         HashSet<Integer> sorted = new HashSet<Integer>();
         int max = 0;
         for(int i : arr){
-            max = i;
+            max = Math.max(i, max);
             sorted.add(i);
         }
         for(int i = 0;i<=max;i++){
@@ -246,6 +246,11 @@ public class Demo {
         Predicate<Integer> predicate = (a) -> a>5;
         predicate.test(4);
         System.out.println("hello java");
+        int count = 0;
+        while(number > 0){
+            number = number / 10;
+            count++;
+        }
     }
     interface First{
         int add(int a , int b);
@@ -254,7 +259,7 @@ public class Demo {
          int a = 11;
          for(int i = 2;i<a;i++){
              if(a%i==0) {
-                 System.out.println("Number is prime");
+                 System.out.println("Number is not prime");
                  return;
              }
          }

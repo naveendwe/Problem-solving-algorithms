@@ -1,10 +1,7 @@
 package com.first;
 
 import java.math.BigInteger;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
@@ -13,7 +10,7 @@ public class AwtTest {
     public static void main(String[] args) {
         BigInteger a = BigInteger.ONE;
         a.isProbablePrime(10);
-     anagram();
+        reverseString();
     }
 
     public static void anagram() {
@@ -30,6 +27,17 @@ public class AwtTest {
               }
          }
         System.out.println("Second Largest: " + secondLargest);
+    }
+
+    static void reverseString() {
+        int[] nums = {2, 2, 1, 1, 2, 2};
+        int count = 0, candidate = 0;
+        for (int num : nums) {
+            if (count == 0)
+                candidate = num;
+            count += (num == candidate) ? 1 : -1;
+        }
+        System.out.println(candidate);
     }
 
 }
