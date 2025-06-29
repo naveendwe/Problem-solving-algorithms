@@ -309,4 +309,52 @@ public class Demo {
          Arrays.sort(s2);
          return Arrays.equals(s1, s2);
     }
+    public void test(){
+        System.out.println("hello".repeat(3));
+        List<Integer> list = List.of(3,43,2,5,3);
+        var map = Map.of(1,1,2,2,3,3);
+        for(var value : map.entrySet()){
+            System.out.println("hello".intern());
+        }
+        list.stream().filter(i -> i>50 && i != 60 && i != 70).forEach(System.out::println);
+        list.stream().distinct().collect(Collectors.toList());
+        list.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        list.stream().sorted(Comparator.reverseOrder());
+    }
+    public String removeDuplicateLetters(String s) {
+        int[] lastIndex = new int[26]; // to store the last index of each character
+        boolean[] seen = new boolean[26]; // to track characters in the current result
+        Stack<Character> stack = new Stack<>();
+
+        // Fill lastIndex with the last occurrence of each character
+        for (int i = 0; i < s.length(); i++) {
+            lastIndex[s.charAt(i) - 'a'] = i;
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+
+            // If character already in result, skip it
+            if (seen[c - 'a']) continue;
+
+            // Remove characters that are bigger than current character
+            // and can appear later again
+            while (!stack.isEmpty() && c < stack.peek() && i < lastIndex[stack.peek() - 'a']) {
+                seen[stack.pop() - 'a'] = false;
+            }
+
+            stack.push(c);
+            seen[c - 'a'] = true;
+        }
+
+        // Build the final result
+        StringBuilder sb = new StringBuilder();
+        for (char ch : stack) {
+            sb.append(ch);
+        }
+
+        return sb.toString();
+    }
+
+
 }

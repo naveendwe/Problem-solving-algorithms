@@ -1,7 +1,18 @@
 package com.problems;
 
-public class Circle {
+
+
+import java.util.List;
+
+public class Circle{
+
     public static void main(String[] args) {
-        System.out.println("This is first test case...");
+
+        armStrong();
     }
+    static void armStrong(){
+        List<Integer> list = List.of(3,2,5,4,3,2);
+
+    }
+
 }
