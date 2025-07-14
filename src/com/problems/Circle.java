@@ -5,14 +5,27 @@ package com.problems;
 import java.util.List;
 
 public class Circle{
+    public Circle(){
+        System.out.println("circle c");
+    }
+    public void show(){
+        System.out.println("Circle");
+    }
 
     public static void main(String[] args) {
 
-        armStrong();
+          Circle c = new Circle();
+          c.show();
     }
-    static void armStrong(){
-        List<Integer> list = List.of(3,2,5,4,3,2);
-
+}
+class Dog extends Circle{
+    public Dog(){
+        System.out.println("dogc");
     }
-
+    public void show(){
+        System.out.println("Dog");
+    }
+    void cow(){
+        System.out.println("cow");
+    }
 }

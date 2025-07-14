@@ -4,9 +4,6 @@ import org.w3c.dom.Node;
 
 import java.math.BigDecimal;
 import java.util.*;
-import java.util.function.BiFunction;
-import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -15,8 +12,9 @@ public class WordTest {
     public static void main(String[] args) {
        // System.out.println(isSubsequence("abc","asgbdtc"));
         //int  a = show();
-        int value = titleToNumber("ABC");
-        System.out.println("value : "+value);
+        System.out.println(Math.multiplyExact(4,5));
+        int[] arr = {2,1,0,4,3,0,5,6,0};
+        armStrong(370);
 
 
     }
@@ -368,6 +366,25 @@ public class WordTest {
              System.out.print(nums[i] + " ");
          }
     }
+    public static void moveZeros(int[] arr){
+        int idx = 0;
+        int  j = 0;
+        for(int i : arr){
+            if(i == 0){
+                idx++;
+            }else{
+                arr[j] = i;
+                j++;
+            }
+        }
+        for(int i = j;i <arr.length;i++){
+            arr[i] = 0;
+        }
+        for(int i = 0; i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+
+    }
 
     public static int person(){
         int result = 0;
@@ -430,4 +447,22 @@ public class WordTest {
     static int compareVersion(String version1, String version2, int a, int b) {
        return 0;
     }
+    public static int armStrong(int num){
+        int original = num;
+        int result = 0;
+        int leng = String.valueOf(num).length();
+        while(num != 0){
+            int digit = num % 10;
+            result += Math.pow(digit, leng);
+            num /= 10;
+
+        }
+        if(original == result){
+            System.out.println("No is Armstrong");
+        }else{
+            System.out.println("Not armstrong");
+        }
+        return 0;
+    }
+
 }

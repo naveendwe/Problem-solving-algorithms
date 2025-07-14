@@ -3,6 +3,7 @@ package com.first;
 import java.math.BigInteger;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class AwtTest {
@@ -41,6 +42,15 @@ public class AwtTest {
             count += (num == candidate) ? 1 : -1;
         }
         System.out.println(candidate);
+    }
+    void mergeList(){
+        List<List<String>> skills = Arrays.asList(
+                Arrays.asList("java","servlet","spring"),
+                Arrays.asList("javascript","react","angular"),
+                Arrays.asList("Mysql","Oracle","Mongodb"));
+       List<String> fi =  skills.stream().flatMap(Collection::stream).collect(Collectors.toList());
+       fi = fi.stream().filter(i -> i.startsWith("s")).collect(Collectors.toList());
+        System.out.println(fi);
     }
 
 }
