@@ -1,24 +1,32 @@
 package com.second;
 
 
-public class First {
+import java.util.*;
+
+public class First{
     public static void main(String[] args){
-       A a = new B();
-       a.show();
+       Test t = new Test();
+       t.test();
     }
 }
-class A {
-     void show(){
-         System.out.println("A");
-     }
-}
-class B extends A{
-    void show(){
-        System.out.println("B");
+class Test implements Test1, Test2, Test3{
+    @Override
+    public void test() {
+        System.out.println("test");
     }
 }
-class InvalidBookException extends Exception{
-    public InvalidBookException(String message){
-        super(message);
+interface Test1 {
+    default void test(){
+        System.out.println("test1");
+    }
+}
+interface  Test2{
+    default void test(){
+        System.out.println("test2");
+    }
+}
+interface Test3{
+    default void test(){
+        System.out.println("Test3");
     }
 }

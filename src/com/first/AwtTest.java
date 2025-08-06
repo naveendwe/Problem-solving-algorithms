@@ -9,9 +9,10 @@ import java.util.stream.IntStream;
 public class AwtTest {
 
     public static void main(String[] args) {
-        BigInteger a = BigInteger.ONE;
-        a.isProbablePrime(10);
-        reverseString();
+//        BigInteger a = BigInteger.ONE;
+//        a.isProbablePrime(10);
+//        reverseString();
+        bubble();
 
     }
 
@@ -51,6 +52,24 @@ public class AwtTest {
        List<String> fi =  skills.stream().flatMap(Collection::stream).collect(Collectors.toList());
        fi = fi.stream().filter(i -> i.startsWith("s")).collect(Collectors.toList());
         System.out.println(fi);
+    }
+    static void bubble(){
+        int[] arr = {12,10,15,5,25}; // TODO INSERTION SORT
+        int temp , j;
+        for(int i = 1;i<arr.length;i++){
+
+            temp = arr[i];
+            j = i;
+            while(j>0 && arr[j-1] > temp){
+                  arr[j] = arr[j-1];
+                  j--;
+            }
+            arr[j] = temp;
+
+        }
+        for(int i : arr){
+            System.out.print(i+" ");
+        }
     }
 
 }

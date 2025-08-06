@@ -230,6 +230,7 @@ public class Demo {
     public static void display(){
         String s = "listen";
         String s1 = "silent1";
+        Stream.of(s.split("")).map(String::toUpperCase).sorted().collect(Collectors.joining());
         String str =  Stream.of(s.split("")).map(String::toUpperCase).sorted().collect(Collectors.joining());
         String str1 =  Stream.of(s1.split("")).map(String::toUpperCase).sorted().collect(Collectors.joining());
         if(str.equalsIgnoreCase(str1)){
