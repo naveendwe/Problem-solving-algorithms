@@ -2,22 +2,34 @@ package com.first;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Square {
 
+	public int say(int a){
+        return a;
+	}
 	public static void main(String[] args) {
 //	     List<Integer> list = List.of(1,2,2,3,4,5,5,6,7);
 //	     Set<Integer> set = new HashSet<>();
 //	     List<Integer> list2 =  list.stream().filter(i -> !set.add(i)).collect(Collectors.toList());
 //	     System.out.println(list2);
-		char[] ch  = {'h','e','l','l','o'};
-		reverseString(ch);
+//		char[] ch  = {'h','e','l','l','o'};
+//		reverseString(ch);
+		Square s = new Square();
+		Ab an = (a) -> {
+			System.out.println("This is testing code");
+			return a;
+		};
+		an.add(5);
+		Ab ad = s::say;
 	}
 	public void findCommonElementsbetweenTwoArrays() {
 		int[] arr1 = {1, 2, 3, 4, 5};
 		int[] arr2 = {4, 5, 6, 7, 8};
 		Set<Integer> set1 = Arrays.stream(arr1).boxed().collect(Collectors.toSet());
 		Set<Integer> set2 = Arrays.stream(arr2).boxed().collect(Collectors.toSet());
+		int[] ex = IntStream.of(arr1).distinct().toArray(); /* This will remove the duplicate data */
 
 		Set<Integer> commonElements = set1.stream().filter(set2::contains).collect(Collectors.toSet());
 
@@ -78,4 +90,7 @@ public class Square {
 			System.out.print(result[i]+" ");
 		}*/
 	}
+}
+interface Ab{
+	int add(int a);
 }

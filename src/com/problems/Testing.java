@@ -4,7 +4,7 @@ import java.sql.Connection;
 
 public class Testing {
     public static void main(String[] args) {
-        test();
+        star8();
 
     }
     static void test(){

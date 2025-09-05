@@ -1,19 +1,44 @@
 package com.problems;
 
+import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 public class Hello {
     public static void main(String[] args) {
-       A aa = (a,b) -> a+" "+b;
-       String result = aa.add("name",5);
-       A.show();
-       System.out.println(result);
+
+
+    }
+    static int missingNumber(){
+        int[] arr = {2};
+        int n = arr.length + 1;  // total numbers (1..n)
+        long totalSum = (long) n * (n + 1) / 2; // use long to avoid overflow
+        long arrSum = 0;
+
+        for (int num : arr) {
+            arrSum += num;
+        }
+
+        return (int) (totalSum - arrSum);
+    }
+
+    // checking
+    static void firstNonRepeatingChar(){
+        String s = "leetcode";
+        Set<Character> seen = new HashSet<>();
+        for(char c : s.toCharArray()){
+            if(seen.contains(c)){
+                System.out.println(c+" : ");
+                return;
+            }
+            seen.add(c);
+        }
     }
 }
 
 interface A {
-    String add(String name, int a);
-    static void show(){
-        System.out.println("show");
-    }
+    int add(int a);
 }
 class Singleton{
         private static volatile Singleton instance;
