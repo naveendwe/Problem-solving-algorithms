@@ -7,7 +7,7 @@ public class First1 {
         for(int i = 0;i<s.length();i++){
             ch[i] = s.charAt(s.length()-1-i);
         }
-        System.out.println(new String(ch));
+        System.out.println(new String(ch)); // O(1) time complexity
     }
 
 }
