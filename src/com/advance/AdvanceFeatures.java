@@ -25,6 +25,7 @@ public class AdvanceFeatures {
         Integer[] arr = list.toArray(Integer[]::new);
         Optional<?> opt = Optional.empty();
         System.out.println(opt.isEmpty());
+        Student s = new Student("User",121);
     }
 }
 sealed interface Car permits Engine{
@@ -36,7 +37,4 @@ non-sealed class Engine implements Car {
     public void start() {
 
     }
-}
-class Diesel extends Engine{
-
 }
