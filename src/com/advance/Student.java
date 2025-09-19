@@ -1,3 +1,4 @@
 package com.advance;
 
-public record Student(String name, int marks) {}
+public record Student(String name, int marks) {
+}
