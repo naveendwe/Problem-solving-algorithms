@@ -2,10 +2,11 @@ package com.advance;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class AdvanceFeatures {
     public static void main(String[] args) {
-        //🟢 Java 11 Features
+        /*//🟢 Java 11 Features
         String s = "   Hello   ";
         //✅ isBlank
         System.out.println("   ".isBlank());
@@ -17,8 +18,8 @@ public class AdvanceFeatures {
 
         String multiline = "Hello\nJava\nand\nC++";
         multiline.lines().forEach(System.out::println);
-        System.out.println(multiline);
-        C();
+        System.out.println(multiline);*/
+        B();
 
     }
     static void A(){
@@ -70,6 +71,16 @@ non-sealed class Engine implements Car {
     public void start() {
 
     }
+}
+interface A{
+    int add(int x, int y);
+}
+class B{
+    public static void main(String[] args) {
+
+    }
+
+
 }
 
 //✅ IMPORTANT POINTS :)🙂

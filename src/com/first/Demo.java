@@ -35,9 +35,9 @@ public class Demo {
         int reversedNumber = 0;
         int temp = number;
         while (temp!=0){
-            int remainder = temp % 10;
+            int remainder = temp % 10; // get last digit
             reversedNumber = reversedNumber * 10 + remainder;
-            temp = temp / 10;
+            temp = temp / 10; // remove last digit
         }
         if (reversedNumber == number){
             System.out.println("Number is palindrome");
@@ -284,7 +284,7 @@ public class Demo {
         return (c1 =='[' && c2==']')|| (c1=='{' && c2=='}')||(c1=='(' && c2==')');
     }
     public static void mergeTwoSortedList(List<String> l1, List<String> l2){
-       List<String> list =  Stream.concat(l1.stream(), l2.stream()).sorted().collect(Collectors.toList());
+       List<String> list =  Stream.concat(l1.stream(), l2.stream()).sorted().toList();
 
     }
     public int maxProfit(int[] prices){
@@ -294,7 +294,7 @@ public class Demo {
         int minPrice = Integer.MIN_VALUE;
         int maxProfit = 0;
         for(int price : prices){
-            //updatat the minimum price
+            //update the minimum price
             if(price < minPrice){
                 minPrice = price;
             }
