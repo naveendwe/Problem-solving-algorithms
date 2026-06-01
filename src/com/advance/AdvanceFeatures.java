@@ -95,3 +95,52 @@ class B{
    7. java 8 is much popular than other version;
    8. Virtual thread is stable in java 21;
 */
+
+// ✅ Mandatory topic for java developers which has to be done
+
+   /*✅ CORE JAVA (MUST MASTER)
+
+          Oop deeply (inheritance, polymorphism, encapsulation, abstraction)
+          Exception handling
+          Multithreading, Synchronization , locks
+          Collection + Generics
+          Stream api & lambda
+          JVM Internals (Heap, Stack, GC , JIT)
+
+     ✅Spring Framework:-
+        Framework ka internal flow samjho, sirf annotation ya config nahi।
+
+        Spring core ( IOC, AOP)
+        Spring boot ( Auto configure, Starters)
+        Spring Data JPA ( Hibernate Deeply)
+        Spring Security ( Jwt , OAuth2)
+        REST API's ( Versioning , validation, exception handling)
+        Unit testing (JUnit + Mockito)
+
+     ✅Database layer (SQL + NOSQL)
+        Query optimization aur indexing tak deep understanding.
+
+        MYSQL/PostgreSqL ( Joins, indexing, Triggers)
+        MongoDB ( Aggregation, Indexes, Query Patterns)
+        Caching ( Redis)
+        Transaction Management)
+
+     ✅CI/CD + Devops Integration
+          Backend ko automate karna — deploy, test, scale.
+
+          Git + Github Actions ( CI/CD Pipelines)
+          Docker ( build, run , deploy containers)
+          Jenkins (Optionals, but good to know)
+          AWS ( EC2, S3, RDS, ECS ECR)
+          Monitoring ( ELK Stack , Prometheus, Grafana)
+
+      ✅System Design
+          Large scale system ka architecture bna pao
+
+          Microservice architecture
+          API Gateway , Service Discovery
+          Message Brokers ( Kafka, RabbitMQ)
+          Load Balancing ,  Caching, Sharding
+          High availability and scalability
+
+      */

@@ -240,9 +240,8 @@ public class Demo {
             System.out.println("The strings are not anagrams.");
         }
     }
-
     public static void countDigitOfnumber(int number){
-        First first = (a,b) -> a+b;
+        First first = Integer::sum;
         System.out.println(first.add(3,4));
         Predicate<Integer> predicate = (a) -> a>5;
         predicate.test(4);
@@ -319,7 +318,7 @@ public class Demo {
         }
         list.stream().filter(i -> i>50 && i != 60 && i != 70).forEach(System.out::println);
         list.stream().distinct().collect(Collectors.toList());
-        list.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        list.stream().collect(Collectors.groupingBy(c-> c, Collectors.counting()));
         list.stream().sorted(Comparator.reverseOrder());
     }
     public String removeDuplicateLetters(String s) {
@@ -357,5 +356,27 @@ public class Demo {
         return sb.toString();
     }
 
+    static void sumUsingRecursionTwoValues(int a, int b){
+        if(b == 0){
+            System.out.println("Sum is: " + a);
+            return;
+        }
+        sumUsingRecursionTwoValues(a+1, b-1);
+    }
+    static void maxsubarray() {
+        String str1 = "listen";
+        String str2 = "silent";
+        char[] c1 = str1.toCharArray();
+        char[] c2 = str2.toCharArray();
+        // to check anagram
+        Arrays.sort(c1);
+        Arrays.sort(c2);
+        if (Arrays.equals(c1, c2)) {
+            System.out.println("The strings are anagrams.");
+        } else {
+            System.out.println("The strings are not anagrams.");
+        }
+
+    }
 
 }

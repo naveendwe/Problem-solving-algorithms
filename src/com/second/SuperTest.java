@@ -2,7 +2,7 @@ package com.second;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+import java.util.Stack;
 
 public class SuperTest{
     public void show(){
@@ -18,7 +18,7 @@ public class SuperTest{
         show();
     }
     public static void main(String[] args) {
-        lukcyNumber();
+        System.out.println(isValid("({}){"));
     }
 
     public boolean isPalindrome(int x) {
@@ -88,7 +88,7 @@ public class SuperTest{
         }
        return null;
     }
-    public boolean isValid(String s) {
+    public static boolean isValid(String s) {
         char[] ch  = s.toCharArray();
         Stack<Character> stack = new Stack<>();
         for(char c : ch){
@@ -100,9 +100,9 @@ public class SuperTest{
                     return false;
                 }
                 char top = stack.pop();
-                if (c == ')' && top != '(' &&
-                        c == '}' && top != '{' &&
-                        c == ']' && top != '[') {
+                if ((c == ')' && top != '(') ||
+                        ( c == '}' && top != '{' ) ||
+                        (c == ']' && top != '[')) {
                     return false;
                 }
             }
